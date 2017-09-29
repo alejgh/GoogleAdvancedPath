@@ -3,4 +3,12 @@ project(GoogleAdvancedPath)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_subdirectory(Decompression)
+find_package(Boost COMPONENTS unit_test_framework REQUIRED)
+ADD_DEFINITIONS(-DBOOST_TEST_DYN_LINK)
+if(Boost_FOUND)
+    include_directories(${Boost_INCLUDE_DIRS})
+        link_libraries(${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+    add_subdirectory(Decompression)
+else()
+    message(SEND_ERROR "Boost wasn't found")
+endif()
