@@ -9,7 +9,7 @@ std::string decompress(const std::string& inputString)
 std::string decompressRecursive(const std::string& inputString, std::string::const_iterator& iter)
 {
     std::string returnString = "";
-    while(iter != inputString.end())
+    while(iter != inputString.end() && *iter != ']')
     {
         const char& ch = *iter;
         if(isalpha(ch))
@@ -29,8 +29,6 @@ std::string decompressRecursive(const std::string& inputString, std::string::con
             for (int i = 0; i < bracketsMultiplier; i++)
                 returnString += stringInsideBrackets;
         }
-        else if(ch == ']')
-            return returnString;
 
         iter++;
     }

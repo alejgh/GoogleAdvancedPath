@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 project(GoogleAdvancedPath)
+enable_testing()
 
 set(CMAKE_CXX_STANDARD 11)
 
@@ -7,8 +8,9 @@ find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 ADD_DEFINITIONS(-DBOOST_TEST_DYN_LINK)
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
-        link_libraries(${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+    link_libraries(${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
     add_subdirectory(Decompression)
+    add_subdirectory(Candies)
 else()
     message(SEND_ERROR "Boost wasn't found")
 endif()

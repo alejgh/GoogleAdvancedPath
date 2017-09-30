@@ -1,5 +1,5 @@
 #include "Decompression.h"
-#define BOOST_TEST_MODULE DecompressionTest
+#define BOOST_TEST_MODULE test decompression
 #include <boost/test/unit_test.hpp>
 
 using namespace boost::unit_test_framework;
