@@ -4,9 +4,16 @@
 
 BOOST_AUTO_TEST_CASE(SimpleTest)
 {
-    BOOST_CHECK(distributeCandies({1, 1, 2, 2, 3, 3}) == 3);
-    BOOST_CHECK(distributeCandies({1, 1, 2, 3}) == 2);
-    BOOST_CHECK(distributeCandies({3, 1, 2, 1}) == 2);
-    BOOST_CHECK(distributeCandies({1,1}) == 1);
-    BOOST_CHECK(distributeCandies({-15, 0, 15, 2, 2, 1, 0, 0, -15, -15}) == 4);
+    std::vector<int> candies{1,1,2,2,3,3};
+    BOOST_CHECK(distributeCandies(candies) == 3);
+    candies = {1,1,2,3};
+    BOOST_CHECK(distributeCandies(candies) == 2);
+    candies = {3,1,2,1};
+    BOOST_CHECK(distributeCandies(candies) == 2);
+    candies = {1,1};
+    BOOST_CHECK(distributeCandies(candies) == 1);
+    candies = {-15, 0, 15, 2, 2, 15, 0, 0, -15, -15};
+    BOOST_CHECK(distributeCandies(candies) == 4);
+    candies = {1,1,1,1,1,1,1,1,1,1};
+    BOOST_CHECK(distributeCandies(candies) == 1);
 }
