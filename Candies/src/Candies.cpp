@@ -1,14 +1,14 @@
 #include "Candies.h"
 
 #include <cassert>
-#include <set>
+#include <unordered_set>
 
 
 int distributeCandies(const std::vector<int>& candiesArray)
 {
     assert(candiesArray.size() % 2 == 0);
 
-    std::set<int> differentCandyTypes;
+    std::unordered_set<int> differentCandyTypes;
     for (int candyType : candiesArray)
         differentCandyTypes.insert(candyType);
 
