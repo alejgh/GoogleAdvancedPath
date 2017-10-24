@@ -3,13 +3,15 @@
 import unittest
 from palindrome import obtain_palindromes
 
+
 class PalindromeTestCase(unittest.TestCase):
     def test_palindrome(self):
         self.check_lists_equal(["abba", "baab"], obtain_palindromes("baba"))
         self.check_lists_equal(obtain_palindromes("abab"), obtain_palindromes("baba"))
         self.check_lists_equal([], obtain_palindromes("abc"))
         self.check_lists_equal(["hannah", "hnaanh", "anhhna", "ahnnha", "nahhan", "nhaahn"],
-                    obtain_palindromes("nhahan"))
+                               obtain_palindromes("nhahan"))
+
 
     def check_lists_equal(self, a_list, other_list):
         if len(a_list) != len(other_list):

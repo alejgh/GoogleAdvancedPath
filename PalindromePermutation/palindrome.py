@@ -2,20 +2,21 @@
 
 import itertools
 
+
 def obtain_palindromes(word):
-    char_ocurrences = {}
+    char_occurrences = {}
     for ch in word:
-        if ch not in char_ocurrences:
-            char_ocurrences[ch] = 1
+        if ch not in char_occurrences:
+            char_occurrences[ch] = 1
         else:
-            char_ocurrences[ch] += 1
+            char_occurrences[ch] += 1
 
-    odd_ocurrences = 0
-    for ch in char_ocurrences:
-        if char_ocurrences[ch] % 2 != 0:
-            odd_ocurrences += 1
+    odd_occurrences = 0
+    for ch in char_occurrences:
+        if char_occurrences[ch] % 2 != 0:
+            odd_occurrences += 1
 
-    if odd_ocurrences > 1:
+    if odd_occurrences > 1:
         return []
     else:
         word_permutations = list({''.join(w) for w in itertools.permutations(word)})
